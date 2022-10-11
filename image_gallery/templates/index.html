@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Image Gallery</title>
+</head>
+
+<body>
+    {% include 'nav.html' %}
+
+
+
+    <div class="full-img" id="fullImgBox">
+        <img src="{% static 'sample_images/img1.jpg' %}" id="fullImg" alt="">
+        <span onclick="closeFullImg()">X</span>
+    </div>
+
+    <div class="img-gallery">
+        {% load static %}
+
+        {% for image in images %}
+        <div class="img">
+            <img src="{{ image.image.url }}" alt="" onclick="openFullImg(this.src)">
+            <p>{{ image.description }}</p>
+        </div>
+        {% endfor %}
+
+        <!-- <div class="img">
+            <img src="{% static 'sample_images/img1.jpg' %}" alt="" onclick="openFullImg(this.src)">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium velit autem deserunt,
+                delectus, excepturi esse architecto tempore</p>
+        </div>
+        <div class="img">
+            <img src="{% static 'sample_images/img2.jpg' %}" alt="" onclick="openFullImg(this.src)">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium velit autem deserunt,
+                delectus, excepturi esse architecto tempore</p>
+
+        </div>
+        <div class="img">
+            <img src="{% static 'sample_images/img3.jpg' %}" alt="" onclick="openFullImg(this.src)">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium velit autem deserunt,
+                delectus, excepturi esse architecto tempore
+        </div>
+        <div class="img">
+            <img src="{% static 'sample_images/img4.jpg' %}" alt="" onclick="openFullImg(this.src)">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium velit autem deserunt,
+                delectus, excepturi esse architecto tempore</p>
+
+        </div>
+        <div class="img">
+            <img src="{% static 'sample_images/img5.jpg' %}" alt="" onclick="openFullImg(this.src)">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium velit autem deserunt,
+                delectus, excepturi esse architecto tempore</p>
+
+        </div>
+        <div class="img">
+            <img src="{% static 'sample_images/img6.jpg' %}" alt="" onclick="openFullImg(this.src)">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium velit autem deserunt,
+                delectus, excepturi esse architecto tempore</p>
+
+        </div>
+        <div class="img">
+            <img src="{% static 'sample_images/img7.jpg' %}" alt="" onclick="openFullImg(this.src)">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium velit autem deserunt,
+                delectus, excepturi esse architecto tempore</p>
+
+        </div>
+        <div class="img">
+            <img src="{% static 'sample_images/img8.jpg' %}" alt="" onclick="openFullImg(this.src)">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium velit autem deserunt,
+                delectus, excepturi esse architecto tempore</p>
+
+        </div> -->
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+</body>
+
+</html>
